@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'images.apps.ImagesConfig',
+    'photo',
     'bootstrap4',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'gallery_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'image',
+        'NAME': 'demu',
         'USER': 'gitonga',
     'PASSWORD':'miriam4363',
     }
@@ -126,3 +126,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
