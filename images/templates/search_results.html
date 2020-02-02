@@ -1,18 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="{% url 'home' %}">My Personal Gallery</a>
+{%extends 'base.html'%}
+
+{%block content%}
+    {{block.super}}
+    <div class="container content">
+        <div class="row">
+            <div class="col-md-3">
+                <nav class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
+                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
+                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
+                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+                </nav>
+            </div>
+            <div class="col-md-9 text-center">
+                {%for image in images%}
+                <a href="#{{image.name}}" data-toggle="modal"><img class="img-fluid img-thumbnail gallery-pic" src="{{image.image.url}}" alt=""></a>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="{{image.name}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body">
+                            <img class="modal-image" src="{{image.image.url}}" alt="">
+                            </div>
+                            <div class="modal-footer">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col">
+                                            <i class="fas fa-map-marker-alt"></i> {{image.description}}
+                                        </div>
+                                        <div class="col">
+                                            <i class="fas fa-stopwatch"></i> {{image.timestamp}}
+                                        </div>
+                                        <div class="col float-right">
+                                        22 <i class="far fa-thumbs-up"></i> | 
+                                            <i class="far fa-thumbs-down"></i> 9
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- modal -->
+                    {% empty %}
+                            
+                            <h5 class="text-center">There are no images to display</h5>
+                            
+                    {%endfor%}
+            </div>
+            
         </div>
-      </div>
-    </nav>
-    </body>
-    </html>
-    
+    </div>
+{%endblock%}
