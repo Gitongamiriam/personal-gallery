@@ -74,7 +74,7 @@ class Image(models.Model):
             images = cls.objects.filter(location=location)
             return images
         except DoesNotExist:
-            print('Objects do not exist')
+            print('Object do not exist')
 
 
     @classmethod
