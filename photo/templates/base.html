@@ -29,7 +29,7 @@
                       <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                      <a class="navbar-brand" href="{% url 'welcome'%}"></a>
+                      <a class="navbar-brand" href="{% url 'welcome'%}"><i class="far fa-image"></i><b>My Gallery</b></a>
                       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                       </ul>
                       <form class="form-inline my-2 my-lg-0" action="{% url 'search' %}">
@@ -40,7 +40,8 @@
             </nav>
     </div>
     {%endblock%}
-
+    <img src="https://bit.ly/36Sv62X">
+    <img src="https://bit.ly/36Sv62X">
 
     {% block scripts %}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
