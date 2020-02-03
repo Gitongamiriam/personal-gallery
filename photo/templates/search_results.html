@@ -4,6 +4,11 @@
     {{block.super}}
     <div class="container content">
         <div class="row">
+            <div class="col-md-3">
+                <h2>Sometimes in life we all need memories to commemorate what we enjoyed earlier in life and keep
+                    them in our hearts and its through our hearts .We do that through pictures
+                </h2>
+            </div>
             <div class="col-md-9 text-center">
                 {%for image in images%}
                 <a href="#{{image.name}}" data-toggle="modal"><img class="img-fluid img-thumbnail gallery-pic" src="{{image.image.url}}" alt=""></a>
@@ -30,8 +35,8 @@
                                             <i class="fas fa-stopwatch"></i> {{image.timestamp}}
                                         </div>
                                         <div class="col float-right">
-                                        22 <i class="far fa-thumbs-up"></i> | 
-                                            <i class="far fa-thumbs-down"></i> 9
+                                        10 <i class="far fa-thumbs-up"></i> | 
+                                            <i class="far fa-thumbs-down"></i> 1
                                         </div>
                                     </div>
                                 </div>

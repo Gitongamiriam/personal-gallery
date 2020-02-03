@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     {% if title %}
-    <title>Personal Gallery | {{title}}</title>
+    <title>My Personal Gallery | {{title}}</title>
     {%else%}
-    <title>Personal Gallery</title>
+    <title>My Personal Gallery</title>
     {%endif%}
 
     {% block styles %}
@@ -29,7 +29,7 @@
                       <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                      <a class="navbar-brand" href="{% url 'welcome'%}"><i class="far fa-image"></i><b>Photo Gallery</b></a>
+                      <a class="navbar-brand" href="{% url 'welcome'%}"><i class="far fa-image"></i><b>My Personal Gallery</b></a>
                       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                       </ul>
                       <form class="form-inline my-2 my-lg-0" action="{% url 'search' %}">
